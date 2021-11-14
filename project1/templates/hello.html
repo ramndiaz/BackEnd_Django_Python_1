@@ -1,14 +1,46 @@
+{% extends "base.html" %}
+
+{% block content%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {%  block title %} hello {% endblock %}
 </head>
 <body>
+
     <h2>
         "hello!"
     </h2>
+    <p>
+        nombre: {{nombre_persona|title}} <br>
+        apellido: {{apellido_persona|title}} <br>
+        carrera: {{carrera_persona}} <br>
+        materia 1 : {{materias_persona.0}} <br>
+        materia 2 : {{materias_persona.1}} <br>
+        materia 3 : {{materias_persona.2}} <br>
+        materia 4 : {{materias_persona.3}} <br>
+        materia 5 : {{materias_persona.4}} <br>
+        materia 6 : {{materias_persona.5}} <br>
+        materia 7 : {{materias_persona.6}} <br>
+    </p>
+    <p>
+        <ul>
+            {% if materias_persona %}
+                {% for materias in materias_persona %}
+                <li> materia : {{materias}} </li>
+                {% endfor %}
+            {% else %}
+                <p>
+                    no hay materias que mostrar
+                </p>
+            {% endif %}
+        </ul>
+    </p>
 </body>
 </html>
+
+{% endblock %}

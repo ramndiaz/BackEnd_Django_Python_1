@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from project1.views import hello, bye, dameFecha, calculaEdad #el metodo que creamos
+from project1.views import hello, bye, dameFecha, calculaEdad, home #el metodo que creamos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
     path('bye/', bye),
+    path('home/', home),
     path('date/', dameFecha),
     path('edad/<int:nacim>, <int:agno>', calculaEdad) #indicamos que vamos a recibir 2 parametros y que los vuelva enteros
 ]
